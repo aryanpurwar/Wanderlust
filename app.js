@@ -32,19 +32,19 @@ app.get("/", (req, res)=>{
 //Index Route
 app.get("/listings", async(req, res)=>{
     const allListings = await Listing.find({});
-    res.render("D:/apnaCollegeSigma/WebDevelopment/Projects/Project-airbnb-FullStack/WanderLust/views/listings/index.ejs", { allListings });
+    res.render("/home/aryan-purwar/Desktop/apnaCollegeSigma/WebDevelopment/Projects/Project-airbnb-FullStack/Wanderlust/views/listings/index.ejs", { allListings });
 });
 
 //New Route
 app.get("/listings/new", (req, res)=>{
-    res.render("D:/apnaCollegeSigma/WebDevelopment/Projects/Project-airbnb-FullStack/WanderLust/views/listings/new.ejs");
+    res.render("/home/aryan-purwar/Desktop/apnaCollegeSigma/WebDevelopment/Projects/Project-airbnb-FullStack/Wanderlust/views/listings/new.ejs");
 })
 
 //Show Route
 app.get("/listings/:id", async(req, res)=>{
     let { id } = req.params;
     const listing = await Listing.findById(id);
-    res.render("D:/apnaCollegeSigma/WebDevelopment/Projects/Project-airbnb-FullStack/WanderLust/views/listings/show.ejs", { listing });
+    res.render("/home/aryan-purwar/Desktop/apnaCollegeSigma/WebDevelopment/Projects/Project-airbnb-FullStack/Wanderlust/views/listings/show.ejs", { listing });
 });
 
 //Create Route
@@ -59,7 +59,7 @@ app.post("/listings", async(req, res)=>{
 app.get("/listings/:id/edit", async(req, res)=>{
     let { id } = req.params;
     const listing = await Listing.findById(id);
-    res.render("D:/apnaCollegeSigma/WebDevelopment/Projects/Project-airbnb-FullStack/WanderLust/views/listings/edit.ejs", { listing });
+    res.render("/home/aryan-purwar/Desktop/apnaCollegeSigma/WebDevelopment/Projects/Project-airbnb-FullStack/Wanderlust/views/listings/edit.ejs", { listing });
 })
 
 
